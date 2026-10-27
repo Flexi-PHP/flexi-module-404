@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CubaDevOps\Flexi\Modules\ErrorHandling\Infrastructure\Controllers;
+namespace Flexi\Modules\ErrorHandling\Infrastructure\Controllers;
 
 use Flexi\Contracts\Classes\HttpHandler;
 use Flexi\Contracts\Classes\Traits\FileHandlerTrait;

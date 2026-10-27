@@ -4,7 +4,7 @@
       "name": "404",
       "path": "/not-found",
       "method": "GET",
-      "controller": "CubaDevOps\\Flexi\\Modules\\ErrorHandling\\Infrastructure\\Controllers\\NotFoundController"
+      "controller": "Flexi\\Modules\\ErrorHandling\\Infrastructure\\Controllers\\NotFoundController"
     }
   ]
 }
