@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CubaDevOps\Flexi\Modules\ErrorHandling\Infrastructure\Controllers;
+namespace Flexi\Modules\ErrorHandling\Infrastructure\Controllers;
 
-use CubaDevOps\Flexi\Contracts\Classes\HttpHandler;
-use CubaDevOps\Flexi\Contracts\Classes\Traits\FileHandlerTrait;
-use CubaDevOps\Flexi\Contracts\Interfaces\SessionStorageInterface;
-use CubaDevOps\Flexi\Contracts\Interfaces\TemplateEngineInterface;
-use CubaDevOps\Flexi\Contracts\ValueObjects\LogLevel;
+use Flexi\Contracts\Classes\HttpHandler;
+use Flexi\Contracts\Classes\Traits\FileHandlerTrait;
+use Flexi\Contracts\Interfaces\SessionStorageInterface;
+use Flexi\Contracts\Interfaces\TemplateEngineInterface;
+use Flexi\Contracts\ValueObjects\LogLevel;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

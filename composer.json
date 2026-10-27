@@ -1,7 +1,7 @@
 {
-  "name": "cubadevops/flexi-module-404",
+  "name": "flexi/flexi-module-404",
   "description": "Page Not Found handling module for Flexi Framework",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "flexi-module",
   "license": "MIT",
   "keywords": [
@@ -19,11 +19,17 @@
   ],
   "require": {
     "php": ">=7.4",
-    "cubadevops/flexi-contracts": "@dev"
+    "flexi/contracts": "^5.2.1",
+    "flexi/flexi-module-session": "^2.0",
+    "flexi/flexi-module-logging": "^2.0",
+    "flexi/flexi-module-ui": "^2.0",
+    "psr/http-message": "^2.0",
+    "psr/log": "^1.1",
+    "psr/http-factory": "^1.0"
   },
   "autoload": {
     "psr-4": {
-      "CubaDevOps\\Flexi\\Modules\\ErrorHandling\\": ""
+      "Flexi\\Modules\\ErrorHandling\\": ""
     }
   },
   "extra": {
@@ -36,7 +42,11 @@
       "provides": [
         "error-handling",
         "exception-pages"
-      ]
+      ],
+      "schema-version": 1,
+      "compatibility": {
+        "core": "^3.2"
+      }
     }
   }
 }
