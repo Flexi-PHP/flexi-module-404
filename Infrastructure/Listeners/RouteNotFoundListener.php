@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace CubaDevOps\Flexi\Modules\ErrorHandling\Infrastructure\Listeners;
 
-use CubaDevOps\Flexi\Contracts\Interfaces\EventInterface;
-use CubaDevOps\Flexi\Contracts\Interfaces\EventListenerInterface;
-use CubaDevOps\Flexi\Contracts\Interfaces\SessionStorageInterface;
+use Flexi\Contracts\Interfaces\EventInterface;
+use Flexi\Contracts\Classes\EventListener;
+use Flexi\Contracts\Interfaces\SessionStorageInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -21,7 +21,7 @@ use Psr\Http\Message\ServerRequestInterface;
  * - 'request' (ServerRequestInterface): The HTTP request object
  * - 'requested_path' (string): The path that was not found
  */
-class RouteNotFoundListener implements EventListenerInterface
+class RouteNotFoundListener extends EventListener
 {
     private SessionStorageInterface $session;
     private ResponseFactoryInterface $response_factory;
@@ -34,7 +34,7 @@ class RouteNotFoundListener implements EventListenerInterface
         $this->response_factory = $response_factory;
     }
 
-    public function handleEvent(EventInterface $event)
+    protected function handleEvent(EventInterface $event): void
     {
         // Only handle core.routeNotFound events
         if ($event->getName() !== 'core.routeNotFound') {
@@ -70,10 +70,4 @@ class RouteNotFoundListener implements EventListenerInterface
         $event->stopPropagation();
     }
 
-    public function handle($dto)
-    {
-        if ($dto instanceof EventInterface) {
-            return $this->handleEvent($dto);
-        }
-    }
 }
